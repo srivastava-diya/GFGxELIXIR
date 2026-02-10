@@ -77,7 +77,7 @@ const About = () => {
               >
                 <div className="flex-shrink-0">{item.icon}</div>
                 <div className="min-w-0">
-                  <h3 className="font-semibold text-white text-sm md:text-base truncate">
+                  <h3 className="font-semibold text-white text-md md:text-base truncate">
                     {item.title}
                   </h3>
                   <p className="text-gray-400 text-xs md:text-sm line-clamp-2">{item.text}</p>
