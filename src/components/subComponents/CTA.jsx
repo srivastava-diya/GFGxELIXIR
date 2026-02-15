@@ -14,6 +14,18 @@ const CTA = () => {
   const sectionRef = useRef(null);
   const contentRef = useRef(null);
 
+  // devfolio button
+  React.useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://apply.devfolio.co/v2/sdk.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.fromTo(
@@ -30,7 +42,7 @@ const CTA = () => {
             end: "bottom top",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
 
       gsap.fromTo(
@@ -46,7 +58,7 @@ const CTA = () => {
             trigger: contentRef.current,
             start: "top 85%",
           },
-        }
+        },
       );
     }, sectionRef);
 
@@ -58,20 +70,19 @@ const CTA = () => {
       ref={sectionRef}
       className="relative h-[90vh] w-full overflow-hidden text-white flex items-center justify-center"
     >
-
       <div
         ref={contentRef}
         className="relative z-10 text-center max-w-3xl mx-auto px-6"
       >
         <div className="mb-6 flex justify-center">
-            <div className="relative w-24 h-24 animate-pulse">
-              <Image 
-                src="/Steller A.webp" 
-                alt="Stellaris Icon" 
-                fill
-                className="object-contain"
-              />
-            </div>
+          <div className="relative w-24 h-24 animate-pulse">
+            <Image
+              src="/Steller A.webp"
+              alt="Stellaris Icon"
+              fill
+              className="object-contain"
+            />
+          </div>
         </div>
 
         <h2
@@ -82,27 +93,38 @@ const CTA = () => {
           </span>
         </h2>
         <p className="text-lg md:text-xl text-gray-300 mb-10">
-          Join the <span className="text-white font-semibold">Stellar  Corps</span>.  
-          Lock orbits with the galaxy&apos;s brightest minds, and code your way to the singularity of innovation.
+          Join the{" "}
+          <span className="text-white font-semibold">Stellar Corps</span>. Lock
+          orbits with the galaxy&apos;s brightest minds, and code your way to
+          the singularity of innovation.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <Button
+          {/* <Button
             size="lg"
             className="bg-white text-black hover:bg-gray-200 px-10 py-7 text-lg font-semibold transform hover:scale-105 transition-all duration-300"
             onClick={() => window.open('https://registration.example.com', '_blank')}
           >
             Register Now
-          </Button>
+          </Button> */}
+
+          {/* devfolio button */}
+          <div
+            class="apply-button"
+            data-hackathon-slug="stellaris"
+            data-button-theme="dark"
+            style="height: 44px; width: 312px"
+          ></div>
+
           <a href="https://discord.gg/yTxvuuktdZ" target="blank">
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-2 border-white text-white hover:bg-white px-10 py-7 text-lg font-semibold transform hover:scale-105 transition-all duration-300"
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-white text-white hover:bg-white px-10 py-7 text-lg font-semibold transform hover:scale-105 transition-all duration-300"
             >
-            Join Discord
-          </Button>
-            </a>
+              Join Discord
+            </Button>
+          </a>
         </div>
 
         <p className="mt-8 text-sm text-gray-400 tracking-wide">

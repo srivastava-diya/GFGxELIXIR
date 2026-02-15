@@ -21,6 +21,18 @@ const Hero = () => {
   const videoRef = useRef(null);
   const contentRef = useRef(null);
 
+  // devfolio button
+  React.useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    }
+}, []);
+
   useEffect(() => {
     let ctx = gsap.context(() => {
        animatePinnedSection(sectionRef.current, videoRef.current, contentRef.current);
@@ -40,7 +52,7 @@ const Hero = () => {
         className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4 space-y-4 pt-15 sm:pt-22"
       >
        <Badge 
-          className="px-4 py-2 text-xs sm:text-sm bg-white/10 backdrop-blur-sm border-white/20 text-white shadow-lg translate-y-8 sm:translate-y-6"
+          className="px-4 py-2 text-xs sm:text-sm bg-white/10 backdrop-blur-sm border-white/20 text-white shadow-lg translate-y-8 sm:translate-y-4"
         >
           COMMAND BRANCH: GEEKSFORGEEKS X ELIXIR
        </Badge>
@@ -82,7 +94,7 @@ const Hero = () => {
             Mission Briefing
           </Button>
 
-          <Button
+          {/* <Button
             size="lg"
             variant="outline"
             className="border-2 border-white text-white hover:bg-white px-6 sm:px-10 py-5 sm:py-6 text-base sm:text-lg font-semibold tracking-wide"
@@ -90,7 +102,16 @@ const Hero = () => {
           >
             <Target className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
             Register Now
-          </Button>
+          </Button> */}
+          
+          {/* devfolio button */}
+          <div
+            class="apply-button"
+            data-hackathon-slug="stellaris"
+            data-button-theme="dark"
+            style="height: 44px; width: 312px"
+          ></div>
+
         </div>
 
         <div className="w-full max-w-4xl mt-10">
