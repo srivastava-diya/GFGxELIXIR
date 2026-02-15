@@ -89,12 +89,8 @@ export const faqs = [
     a: "No, all projects must be started fresh during the hackathon. You can use libraries and frameworks, but the core idea must be new.",
   },
   {
-    q: "How will projects be judged?",
-    a: "Projects will be judged on innovation, technical complexity, user experience, and presentation by industry experts.",
-  },
-  {
     q: "Will the event be online or offline?",
-    a: "The hackathon will be hybrid — both online and offline options are available. Join us at the venue or remotely.",
+    a: "The hackathon will be held offline. Join us at the venue on 28th March.",
   },
 ];
 
@@ -181,8 +177,26 @@ export const timelineData = [
 
 export const sponsorsData = [
     { tier: "India Blockchain Week 2024", image: "/sponsors/ibw.svg", glow: "from-blue-500/20" },
-    { tier: "Devfolio", image: "/sponsors/Devfolio.png", glow: "from-cyan-500/20" },
+    { tier: "Devfolio Logo", image: "/sponsors/DevfolioDArk.png", glow: "from-cyan-500/20" },
     { tier: "QuillAudits", image: "/sponsors/QuillAudit.webp", glow: "from-purple-500/20" },
     { tier: "ETHIndia", image: "/sponsors/ethindia-logo.svg", glow: "from-pink-500/20" },
     { tier: "Polygon", image: "/sponsors/Polygon.svg", glow: "from-indigo-500/20" },
+  ];
+
+export const navItems = [
+    { label: "Home", href: "#hero" },
+    { label: "About", href: "#mission-briefing" },
+    { label: "Tracks", href: "#tracks" },
+    { label: "Timelines", href: "#timeline" },
+    { label: "Sponsors", href: "#sponsors" },
+    { label: "Rewards", href: "#prizes" },
+    { label: "FAQ", href: "#faq" },
+  ];
+
+export const quickLinks = [
+    { label: "Home", href: "#hero" },
+    { label: "Tracks", href: "#tracks" },
+    { label: "Timelines", href: "#timeline" },
+    { label: "Sponsors", href: "#sponsors" },
+    { label: "Rewards", href: "#prizes" },
   ];

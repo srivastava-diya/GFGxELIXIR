@@ -21,6 +21,18 @@ const Hero = () => {
   const videoRef = useRef(null);
   const contentRef = useRef(null);
 
+  // devfolio button
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    }
+}, []);
+
   useEffect(() => {
     let ctx = gsap.context(() => {
        animatePinnedSection(sectionRef.current, videoRef.current, contentRef.current);
@@ -40,7 +52,7 @@ const Hero = () => {
         className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4 space-y-4 pt-15 sm:pt-22"
       >
        <Badge 
-          className="px-4 py-2 text-xs sm:text-sm bg-white/10 backdrop-blur-sm border-white/20 text-white shadow-lg translate-y-8 sm:translate-y-6"
+          className="px-4 py-2 text-xs sm:text-sm bg-white/10 backdrop-blur-sm border-white/20 text-white shadow-lg translate-y-8 sm:translate-y-4"
         >
           COMMAND BRANCH: GEEKSFORGEEKS X ELIXIR
        </Badge>
@@ -49,7 +61,7 @@ const Hero = () => {
           {/* The Image is now absolute, so its "transparent border" won't push anything */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none translate-x-5 translate-y-11">
             <Image 
-              src="/stellaris logo.webp" 
+              src="/stellaris-logo.webp" 
               alt="Stellaris Logo" 
               width={1200}
               height={400}
@@ -66,7 +78,7 @@ const Hero = () => {
         <h2
           className={`${audiowide.className} text-xl sm:text-2xl md:text-3xl text-white/90 tracking-[0.05em] leading-tight`}
         >
-          BREAK THROUGH THE WALLS OF INNOVATION
+          TRANSCEND THE CODE, CONQUER THE COSMOS.
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 w-full sm:w-auto px-2">
@@ -82,7 +94,7 @@ const Hero = () => {
             Mission Briefing
           </Button>
 
-          <Button
+          {/* <Button
             size="lg"
             variant="outline"
             className="border-2 border-white text-white hover:bg-white px-6 sm:px-10 py-5 sm:py-6 text-base sm:text-lg font-semibold tracking-wide"
@@ -90,7 +102,15 @@ const Hero = () => {
           >
             <Target className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
             Register Now
-          </Button>
+          </Button> */}
+          
+          {/* devfolio button */}
+          <div
+            className="apply-button h-11 w-[312px]"
+            data-hackathon-slug="stellaris"
+            data-button-theme="dark-inverted"
+          ></div>
+
         </div>
 
         <div className="w-full max-w-4xl mt-10">
