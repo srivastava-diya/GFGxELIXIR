@@ -82,9 +82,12 @@ export default function Footer() {
                     className="hover:text-blue-400 transition-all duration-200 hover:scale-105"
                   />
                 </Hint>
-                <span className="hover:text-blue-400 transition-all duration-200 hover:translate-y-[-2px] cursor-pointer">
+                <a 
+                  href="mailto:techcommunityelixir@gmail.com" 
+                  className="hover:text-blue-400 transition-all duration-200 hover:translate-y-[-2px] cursor-pointer"
+                >
                   techcommunityelixir@gmail.com
-                </span>
+                </a>
               </p>
               <div className="flex items-center gap-4 mt-1 text-gray-400">
                 <Hint label="Visit our website">
@@ -119,7 +122,7 @@ export default function Footer() {
                 </Hint>
                 <Hint label="Join our Discord">
                   <Link
-                    href="https://discord.gg/vkkBGt7eHY"
+                    href="https://discord.com/invite/yTxvuuktdZ"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-all duration-200 hover:scale-105  p-1 rounded"
@@ -148,7 +151,7 @@ export default function Footer() {
             </div>
             <p>© 2026 ELIXIR TECH COMMUNITY. ALL RIGHTS RESERVED.</p>
             <p>
-              Built with <span className="text-red-500"></span> by GFG x ELIXIR
+              Built by GFG x ELIXIR
               Team.
             </p>
           </div>
