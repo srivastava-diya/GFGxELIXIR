@@ -6,6 +6,7 @@ import { IconBrandDiscord } from "@tabler/icons-react";
 import { quickLinks } from "@/lib/data/data";
 import { Hint, HintProvider } from "@/components/ui/hint";
 import Image from "next/image";
+import VisitorBadge from "@/components/visitor-badge";
 
 export default function Footer() {
   return (
@@ -142,6 +143,9 @@ export default function Footer() {
 
           {/* Bottom text */}
           <div className="border-t border-gray-800 mt-8 pt-4 text-center text-gray-500 text-sm md:text-xs lg:text-base space-y-1">
+            <div className="flex justify-center items-center gap-4 mb-2">
+              <VisitorBadge />
+            </div>
             <p>© 2026 ELIXIR TECH COMMUNITY. ALL RIGHTS RESERVED.</p>
             <p>
               Built with <span className="text-red-500"></span> by GFG x ELIXIR
