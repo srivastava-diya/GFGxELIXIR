@@ -3,6 +3,7 @@ import "./globals.css";
 import GSAPProvider from "@/components/gsap-provider";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,13 +27,15 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-transparent`}
       >
+        <Analytics />
         <BackgroundVideo />
         <GSAPProvider>{children}</GSAPProvider>
         <Script
-  src="https://apply.devfolio.co/v2/sdk.js"
-  strategy="afterInteractive"
-/>
-      {/* <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script> */}
+          src="https://apply.devfolio.co/v2/sdk.js"
+          strategy="afterInteractive"
+        />
+        
+        {/* <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script> */}
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
-import { Award, Trophy, Rocket, Star, Crown, Zap } from "lucide-react";
+import { Rocket, Star, Zap } from "lucide-react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { winners } from "@/lib/data/data";
 
 const InteractiveCard = ({
   children,
@@ -84,41 +85,7 @@ const Prizes = () => {
     }
   }, []);
 
-  const winners = [
-    {
-      place: "1st Place",
-      amount: "$500",
-      icon: Trophy,
-      color: "text-yellow-100",
-      spotlight: "rgba(253, 224, 71, 0.2)",
-      border: "hover:border-yellow-500/40",
-      perks: ["Mentorship", "Internship", "Certificate"],
-      id: 1,
-      order: "lg:order-2",
-    },
-    {
-      place: "2nd Place",
-      amount: "$300",
-      icon: Crown,
-      color: "text-slate-200",
-      spotlight: "rgba(226, 232, 240, 0.2)",
-      border: "hover:border-slate-400/40",
-      perks: ["Mentorship", "Interview Prep", "Certificate"],
-      id: 2,
-      order: "lg:order-1",
-    },
-    {
-      place: "3rd Place",
-      amount: "$200",
-      icon: Award,
-      color: "text-orange-100",
-      spotlight: "rgba(253, 186, 116, 0.2)",
-      border: "hover:border-orange-500/40",
-      perks: ["Mentorship", "Swag", "Certificate"],
-      id: 3,
-      order: "lg:order-3",
-    },
-  ];
+
 
   return (
     <section className="relative min-h-screen py-24 text-white overflow-hidden flex flex-col justify-center perspective-1000">
@@ -190,9 +157,11 @@ const Prizes = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+
+        {/* TRACK WINNERS */}
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto"> */}
           {/* --- Card 1: Track Winners --- */}
-          <motion.div
+          {/* <motion.div
             className="h-full perspective-1000"
             whileHover={{ scale: 1.02 }}
           >
@@ -201,7 +170,6 @@ const Prizes = () => {
               spotlightColor="rgba(59, 130, 246, 0.2)"
             >
               <div className="relative h-full p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-8 z-10">
-                {/* Left Side: Icon & Title */}
                 <div className="text-left w-full md:w-auto md:flex-1 min-w-0">
                   <div className="flex items-center gap-4">
                     <div className="p-3 rounded-xl bg-gradient-to-br from-white/5 to-white/0 border border-white/10 group-hover:border-blue-500/30 group-hover:bg-blue-500/10 transition-all duration-300 shadow-inner">
@@ -221,7 +189,6 @@ const Prizes = () => {
                   </div>
                 </div>
 
-                {/* Right Side: Price & Badge */}
                 <div className="w-full md:w-auto mt-2 md:mt-0 flex flex-row md:flex-col items-center md:items-end justify-between md:justify-center border-t md:border-t-0 border-white/5 pt-4 md:pt-0">
                   <p className="text-2xl md:text-3xl font-bold text-white group-hover:text-blue-300 transition-colors tracking-tight drop-shadow-md">
                     $100
@@ -235,10 +202,10 @@ const Prizes = () => {
                 </div>
               </div>
             </InteractiveCard>
-          </motion.div>
+          </motion.div> */}
 
           {/* --- Card 2: Special Awards --- */}
-          <motion.div
+          {/* <motion.div
             className="h-full perspective-1000"
             whileHover={{ scale: 1.02 }}
           >
@@ -247,7 +214,6 @@ const Prizes = () => {
               spotlightColor="rgba(168, 85, 247, 0.2)"
             >
               <div className="relative h-full p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-8 z-10">
-                {/* Left Side: Icon & Title */}
                 <div className="text-left w-full md:w-auto md:flex-1 min-w-0">
                   <div className="flex items-center gap-4">
                     <div className="p-3 rounded-xl bg-gradient-to-br from-white/5 to-white/0 border border-white/10 group-hover:border-purple-500/30 group-hover:bg-purple-500/10 transition-all duration-300 shadow-inner">
@@ -267,7 +233,6 @@ const Prizes = () => {
                   </div>
                 </div>
 
-                {/* Right Side: Price & Badge */}
                 <div className="w-full md:w-auto mt-2 md:mt-0 flex flex-row md:flex-col items-center md:items-end justify-between md:justify-center border-t md:border-t-0 border-white/5 pt-4 md:pt-0">
                   <p className="text-2xl md:text-3xl font-bold text-white group-hover:text-purple-300 transition-colors tracking-tight drop-shadow-md">
                     $ 50
@@ -281,8 +246,8 @@ const Prizes = () => {
                 </div>
               </div>
             </InteractiveCard>
-          </motion.div>
-        </div>
+          </motion.div> */}
+        {/* </div> */}
       </div>
 
       <style jsx>{`

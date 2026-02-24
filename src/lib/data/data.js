@@ -7,7 +7,10 @@ import {
   Trophy,
   Users,
   Zap,
+  Award, 
+  Crown
 } from "lucide-react";
+
 
 export const aboutData = [
   {
@@ -187,4 +190,41 @@ export const quickLinks = [
     { label: "Timelines", href: "#timeline" },
     { label: "Sponsors", href: "#sponsors" },
     { label: "Rewards", href: "#prizes" },
+  ];
+
+
+export const winners = [
+    {
+      place: "1st Place",
+      amount: "$500",
+      icon: Trophy,
+      color: "text-yellow-100",
+      spotlight: "rgba(253, 224, 71, 0.2)",
+      border: "hover:border-yellow-500/40",
+      perks: ["Mentorship", "Internship", "Certificate"],
+      id: 1,
+      order: "lg:order-2",
+    },
+    {
+      place: "2nd Place",
+      amount: "$300",
+      icon: Crown,
+      color: "text-slate-200",
+      spotlight: "rgba(226, 232, 240, 0.2)",
+      border: "hover:border-slate-400/40",
+      perks: ["Mentorship", "Interview Prep", "Certificate"],
+      id: 2,
+      order: "lg:order-1",
+    },
+    {
+      place: "3rd Place",
+      amount: "$200",
+      icon: Award,
+      color: "text-orange-100",
+      spotlight: "rgba(253, 186, 116, 0.2)",
+      border: "hover:border-orange-500/40",
+      perks: ["Mentorship", "Swag", "Certificate"],
+      id: 3,
+      order: "lg:order-3",
+    },
   ];
