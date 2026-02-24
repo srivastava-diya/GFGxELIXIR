@@ -72,7 +72,7 @@ const Hero = () => {
           TRANSCEND THE CODE, CONQUER THE COSMOS.
         </h2>
 
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 mt-4 w-full max-w-sm sm:w-auto px-2">
+        <div className="flex flex-col items-center sm:flex-row gap-3 sm:gap-6 mt-4 w-full max-w-sm sm:w-auto px-2">
           <Button
             size="lg"
             variant="outline"
