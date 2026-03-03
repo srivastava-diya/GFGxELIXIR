@@ -86,13 +86,15 @@ export const animatePinnedSection = (
   videoElement,
   contentElement,
 ) => {
+  const isMobile = window.innerWidth < 768;
+
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: triggerElement,
       start: "top top",
-      end: "bottom+=100% top",
-      scrub: 1.5,
-      pin: true,
+      end: isMobile ? "bottom top" : "bottom+=100% top",
+      scrub: isMobile ? 0.5 : 1.5,
+      pin: !isMobile, // Disable pinning on mobile — prevents "stuck" scrolling
     },
   });
 
@@ -100,7 +102,12 @@ export const animatePinnedSection = (
     tl.fromTo(
       videoElement,
       { scale: 1, opacity: 1, filter: "blur(0px)" },
-      { scale: 1.25, opacity: 0.4, filter: "blur(4px)", ease: "power3.inOut" },
+      {
+        scale: isMobile ? 1.05 : 1.25,
+        opacity: isMobile ? 0.6 : 0.4,
+        filter: isMobile ? "blur(0px)" : "blur(4px)",
+        ease: "power3.inOut",
+      },
       0,
     );
   }
@@ -109,7 +116,7 @@ export const animatePinnedSection = (
     tl.fromTo(
       contentElement,
       { opacity: 1, y: 0 },
-      { opacity: 0, y: -100, ease: "power2.inOut" },
+      { opacity: 0, y: isMobile ? -40 : -100, ease: "power2.inOut" },
       0,
     );
   }

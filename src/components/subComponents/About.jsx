@@ -157,41 +157,52 @@ const About = () => {
           }}
           dragMomentum={false}
           style={{
-            x,
-            y,
+            x: isMobile ? undefined : x,
+            y: isMobile ? undefined : y,
             cursor: isMobile ? "default" : "url('/cursor.png') 12 12, auto",
-            touchAction: "none",
+            touchAction: isMobile ? "auto" : "none",
           }}
-          whileDrag={{
-            scale: 1.05,
-            rotate: 2,
-            transition: { duration: 0.2 },
-            cursor: "url('/cursor.png') 12 12, grabbing",
-          }}
+          whileDrag={
+            isMobile
+              ? undefined
+              : {
+                  scale: 1.05,
+                  rotate: 2,
+                  transition: { duration: 0.2 },
+                  cursor: "url('/cursor.png') 12 12, grabbing",
+                }
+          }
           whileTap={
             !isMobile
               ? {
                   scale: 0.95,
                   transition: { duration: 0.1 },
                 }
-              : {}
+              : undefined
           }
-          onDragStart={() => {
-            if (!isMobile) {
-              document.body.style.cursor = "url('/cursor.png') 12 12, grabbing";
-            }
-          }}
-          onDragEnd={() => {
-            if (!isMobile) {
-              document.body.style.cursor = "auto";
-            }
-          }}
+          onDragStart={
+            isMobile
+              ? undefined
+              : () => {
+                  document.body.style.cursor =
+                    "url('/cursor.png') 12 12, grabbing";
+                }
+          }
+          onDragEnd={
+            isMobile
+              ? undefined
+              : () => {
+                  document.body.style.cursor = "auto";
+                }
+          }
         >
           <img
             src="/astro.2.webp"
             alt="Astronaut"
-            className={`w-full object-contain drop-shadow-[0_0_15px_rgba(0,128,255,0.3)] animate-astro-float brightness-85 pointer-events-none ${
-              isMobile ? "max-w-[300px]" : "max-w-[650px]"
+            className={`w-full object-contain pointer-events-none ${
+              isMobile
+                ? "max-w-[280px] animate-astro-float-mobile"
+                : "max-w-[650px] drop-shadow-[0_0_15px_rgba(0,128,255,0.3)] animate-astro-float brightness-85"
             }`}
           />
         </motion.div>

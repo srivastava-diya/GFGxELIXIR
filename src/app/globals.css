@@ -148,6 +148,22 @@
   animation: astro-float 6s ease-in-out infinite;
 }
 
+/* Lighter float animation for mobile — less movement, no rotation, reduced compositing */
+@keyframes astro-float-mobile {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-astro-float-mobile {
+  animation: astro-float-mobile 8s ease-in-out infinite;
+  will-change: auto;
+}
+
 /* Devfolio button styles */
 .apply-button {
   position: relative !important;

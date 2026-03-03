@@ -151,8 +151,8 @@ const Cards = () => {
                   {item.number}
                 </div>
 
-                {/* Animated Glow Ring */}
-                <div className="absolute top-8 left-8 w-20 h-20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                {/* Animated Glow Ring — hidden on mobile for performance */}
+                <div className="absolute top-8 left-8 w-20 h-20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden md:block">
                   <div className="absolute inset-0 rounded-full bg-white/10 animate-ping" style={{ animationDuration: "2s" }} />
                 </div>
 

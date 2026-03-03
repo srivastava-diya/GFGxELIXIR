@@ -26,6 +26,10 @@ const Hero = () => {
   useDevfolio();
 
   useEffect(() => {
+    // Skip pinned animation entirely on mobile for smooth scrolling
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return;
+
     let ctx = gsap.context(() => {
       animatePinnedSection(
         sectionRef.current,
@@ -34,7 +38,7 @@ const Hero = () => {
       );
     }, sectionRef);
 
-    return () => ctx.revert();
+    return () => ctx?.revert();
   }, []);
 
   return (
