@@ -36,7 +36,7 @@ export default function Footer() {
 
             {/* Event Info */}
             <div className="space-y-2">
-              <h2 className="text-white font-semibold tracking-wider hover:text-blue-500 transition-all duration-200 hover:translate-y-[-2px] cursor-pointer text-lg md:text-base lg:text-xl">
+              <h2 className="text-blue-500 font-semibold tracking-wider transition-all duration-200 hover:translate-y-[-2px]  text-lg md:text-base lg:text-xl">
                 EVENT INFO
               </h2>
               <p className="text-gray-400 text-base md:text-sm lg:text-lg">
@@ -49,7 +49,7 @@ export default function Footer() {
 
             {/* Quicklinks */}
             <div className="space-y-2">
-              <h2 className="text-white font-semibold tracking-wider hover:text-blue-500 transition-all duration-200 hover:translate-y-[-2px] cursor-pointer text-lg md:text-base lg:text-xl">
+              <h2 className="text-blue-500 font-semibold tracking-wider  transition-all duration-200 hover:translate-y-[-2px]  text-lg md:text-base lg:text-xl">
                 QUICKLINKS
               </h2>
 
@@ -72,7 +72,7 @@ export default function Footer() {
 
             {/* Connect */}
             <div className="space-y-2">
-              <h2 className="text-white font-semibold tracking-wider hover:text-blue-500 transition-all duration-200 hover:translate-y-[-2px] cursor-pointer text-lg md:text-base lg:text-xl">
+              <h2 className="text-blue-500 font-semibold tracking-wider transition-all duration-200 hover:translate-y-[-2px]  text-lg md:text-base lg:text-xl">
                 CONNECT
               </h2>
               <p className="text-gray-400 text-base md:text-sm lg:text-lg flex items-center gap-2">
