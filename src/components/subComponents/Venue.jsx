@@ -65,9 +65,18 @@ export function Venue() {
         ),
         transition: "all .3s",
         zIndex: 6,
+        // ...(hov
+        //   ? { width: 22, height: 22, borderColor: "rgba(200,200,200,0.9)" }
+        //   : {}),
         ...(hov
-          ? { width: 22, height: 22, borderColor: "rgba(200,200,200,0.9)" }
-          : {}),
+            ? {
+                width: 22,
+                height: 22,
+                ...Object.fromEntries(
+                    borders.map((b) => [b, "1.5px solid rgba(200,200,200,0.9)"])
+                ),
+            }
+            : {}),
       }}
     />
   );
