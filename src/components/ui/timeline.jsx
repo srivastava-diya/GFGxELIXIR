@@ -54,9 +54,9 @@ export const Timeline = ({ data }) => {
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto pt-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-3xl md:text-5xl lg:text-7xl mb-4 text-center text-white max-w-4xl font-extralight">
+        <h2 className="text-3xl md:text-5xl lg:text-7xl mb-4 text-center text-white max-w-4xl font-extralight mx-auto overflow-visible px-4">
           Mission{" "}
-          <span className="bg-gradient-to-r from-[#0080FF] via-[#0D52BD] to-[#1C05B3] bg-clip-text text-transparent italic font-bold">
+          <span className="bg-gradient-to-r from-[#0080FF] via-[#0D52BD] to-[#1C05B3] bg-clip-text text-transparent italic font-bold inline-block pr-2 md:pr-4">
             Timeline
           </span>
         </h2>
