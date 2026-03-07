@@ -1,7 +1,5 @@
 "use client"
 
-import React from "react";
-import { useState } from "react";
 import { WindowSizeStarField } from "starfield-react"
 
 const props = {
@@ -9,7 +7,6 @@ const props = {
   speed: 2.8,
   starRatio: 81,
   starSize: 2,
-  randomColor: false,
   starStyle: "#fff",
   starShape: "round",
   clear: true,
@@ -19,11 +16,9 @@ const props = {
 };
 
 const StarField = () => {
-  const [propsState] = useState(props);
-
   return (
     <div>
-      <WindowSizeStarField {...propsState} />
+      <WindowSizeStarField {...props} />
     </div>
   );
 };
