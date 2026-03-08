@@ -46,7 +46,7 @@ const Partners = () => {
         <h2 className="text-5xl md:text-7xl font-extralight tracking-tighter uppercase italic">
           Platform{" "}
           <span className="font-bold bg-gradient-to-r from-[#0080FF] via-[#0D52BD] to-[#1C05B3] bg-clip-text text-transparent">
-            Partners
+            Partner
           </span>
         </h2>
       </div>
